@@ -23,5 +23,14 @@ namespace HotelDlaPsow
         {
             InitializeComponent();
         }
+
+        ClassDataBase _base = new ClassDataBase();
+        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            _base.OpenConection();
+            _base.GetDailyInfoDate(TextboxName.Text, DatePickerDate.SelectedDate.Value);
+            dataGridDogActive.ItemsSource = _base.collectionofActivities;
+            _base.CloseConnection();
+        }
     }
 }

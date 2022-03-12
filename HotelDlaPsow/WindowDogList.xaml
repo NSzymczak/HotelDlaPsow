@@ -27,35 +27,16 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Column="2" Grid.Row="7" Margin="11">Dodaj</Button>
+        <Button Grid.Column="2" Grid.Row="7" Margin="11" >Dodaj</Button>
         <Button Grid.Column="3" Grid.Row="7" Margin="11">Edytuj</Button>
         <Button Grid.Column="4" Grid.Row="7" Margin="11">Usuń</Button>
         <DataGrid Name="dgVisits" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Margin="10,0"  Grid.RowSpan="6">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID Pieska" Width="100" Binding="{Binding idDog}"/>
-                <DataGridTextColumn Header="Imię Pieska" Width="100" Binding="{Binding dogeName}"/>
-                <DataGridCheckBoxColumn Header="Sterelizowany" Width="100" Binding="{Binding sterilization}"/>
-                <DataGridTextColumn Header="Ostatnia Cieczka" Width="100" Binding="{Binding lastDogsEstrus}"/>
-                <DataGridTextColumn Header="Rasa Pieska" Width="100" Binding="{Binding breedofDog}"/>
-                <DataGridTextColumn Header="Wiek Pieska" Width="100" Binding="{Binding ageofDog}"/>
-                <DataGridTextColumn Header="Waga Pieska" Width="100" Binding="{Binding weightofDog}"/>
-                <DataGridTextColumn Header="Karma Pieska" Width="100" Binding="{Binding dogFood}"/>
-                <DataGridTextColumn Header="Karmienie" Width="100" Binding="{Binding dogFeeding}"/>
-                <DataGridTextColumn Header="Godzina Karmienia" Width="100" Binding="{Binding hourofFeeding}"/>
-                <DataGridTextColumn Header="Uwagi" Width="100" Binding="{Binding dogfeedingNote}"/>
-                <DataGridTextColumn Header="Godziny Spacerków" Width="100" Binding="{Binding dogwalkHour}"/>
-                <DataGridTextColumn Header="Długość Spacerków" Width="100" Binding="{Binding lengthofWalks}"/>
-                <DataGridTextColumn Header="Stan Zdrowia Pieska" Width="100" Binding="{Binding healthStatus}"/>
-                <DataGridTextColumn Header="Wskazania Weterynarza" Width="100" Binding="{Binding vetIndication}"/>
-                <DataGridTextColumn Header="Data ostatniego szczepienia" Width="100" Binding="{Binding vaccDate}"/>
-                <DataGridTextColumn Header="Ochrona Kleszcze" Width="100" Binding="{Binding ticksProtection}"/>
-                <DataGridTextColumn Header="Weterynarz Pieska" Width="100" Binding="{Binding vetData}"/>
-                <DataGridTextColumn Header="Charakter" Width="100" Binding="{Binding charDesc}"/>
-                <DataGridTextColumn Header="Reakcja na koty" Width="100" Binding="{Binding reacttiCats}"/>
-                <DataGridTextColumn Header="Ulubiona Zabawka" Width="100" Binding="{Binding favToy}"/>
-                <DataGridTextColumn Header="Komendy" Width="100" Binding="{Binding commands}"/>
-                <DataGridTextColumn Header="Zabiegi Pielęgnacyjne" Width="100" Binding="{Binding beautyDog}"/>
-                <DataGridTextColumn Header="Wcześniejsze Hotele" Width="100" Binding="{Binding lastHotel}"/>
+                <DataGridTextColumn Header="Imię Pieska" Width="1*" Binding="{Binding dogeName}"/>
+                <DataGridTextColumn Header="Rasa Pieska" Width="1*" Binding="{Binding breed}"/>
+                <DataGridTextColumn Header="Rasa Pieska" Width="1*" Binding="{Binding color}"/>
+                <DataGridTextColumn Header="Wiek Pieska" Width="1*" Binding="{Binding age}"/>
+                <DataGridTextColumn Header="Charakter" Width="2*" Binding="{Binding characterDescription}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -1,12 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows;
 
 namespace HotelDlaPsow
 {
-    internal class ClassDataBase
+    public class ClassDataBase
     {
+        public ObservableCollection<ClassDailyActive> collectionofActivities = new ObservableCollection<ClassDailyActive>();
+
+
+        private SqlConnection cnn;
+        public void OpenConection()
+        {
+            string connetionString;
+            try
+            {
+                connetionString = @"Data Source=";
+                cnn = new SqlConnection(connetionString);
+                cnn.Open();
+            }
+            catch 
+            {
+                MessageBox.Show("Błąd połączenia z bazą");
+            }
+        }
+
+        public void GetDailyInfoDate(string Name, DateTime date)
+        {
+
+        }
+        public void CloseConnection()
+        {
+            cnn.Close();
+        }
     }
 }

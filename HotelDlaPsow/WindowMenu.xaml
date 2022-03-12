@@ -23,7 +23,6 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" 
                VerticalContentAlignment="Center" FontSize="26" FontFamily="Bahnschrift SemiBold SemiCondensed">
@@ -33,11 +32,9 @@
                VerticalContentAlignment="Center" FontSize="17">
             Wybierz operację
         </Label>
-        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="10">Aktywność</Button>
-        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Margin="10">Informacje o piesku</Button>
+        <Button Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Margin="10">Dzienna aktywność</Button>
         <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Margin="10">Wizyty piesków</Button>
-        <Button Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" Margin="10">Lista piesków</Button>
-        <Button Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" Margin="10">Informacje o piesku</Button>
-        <Button Grid.Column="2" Grid.Row="8" Margin="10">Wyloguj</Button>
+        <Button Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Margin="10">Lista piesków</Button>
+        <Button Grid.Column="2" Grid.Row="7" Margin="10">Wyloguj</Button>
     </Grid>
 </Window>

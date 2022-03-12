@@ -13,6 +13,7 @@ namespace HotelDlaPsow
         bool sterilization;            //sterylizacja
         DateTime lastEstrus;           //ostatnia cieczka
         string breed;                  //rasa
+        string color;                  //umaszczenie
         float age;                     //wiek
         float weight;                  //waga
         string food;                   //karma
@@ -30,7 +31,7 @@ namespace HotelDlaPsow
         string CatsReaction;           //Reakcja na koty
         string favToy;                 //ulubiona zabawka
         string knownCommands;          //znane komendy
-        string beautyTreatments;      //zabiegi pielęgnacyjne
+        string beautyTreatments;       //zabiegi pielęgnacyjne
         string hotelStays;             //wcześniejsze pobyty w hotelach
 
         ClassDogs() { }

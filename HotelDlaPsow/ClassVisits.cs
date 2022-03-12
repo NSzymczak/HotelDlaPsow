@@ -10,7 +10,7 @@ namespace HotelDlaPsow
     {
         int idVist;
         string dogsName;
-        DateTime dataGodzinaRozpoczecia;
-        DateTime dataGodzinaZakonczenia;
+        DateTime beginDate;
+        DateTime endDate;
     }
 }

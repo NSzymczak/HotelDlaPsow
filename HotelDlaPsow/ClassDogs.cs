@@ -30,7 +30,7 @@ namespace HotelDlaPsow
         string CatsReaction;           //Reakcja na koty
         string favToy;                 //ulubiona zabawka
         string knownCommands;          //znane komendy
-        string nursingTreatments;      //zabiegi pielęgnacyjne
+        string beautyTreatments;      //zabiegi pielęgnacyjne
         string hotelStays;             //wcześniejsze pobyty w hotelach
 
         ClassDogs() { }

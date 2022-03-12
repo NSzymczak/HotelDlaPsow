@@ -5,8 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelDlaPsow"
         mc:Ignorable="d"
-        Title="WindowLogin" Height="450" Width="800">
+        Title="Logowanie" Height="500" Width="400">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" 
+               VerticalContentAlignment="Center" FontSize="26" FontFamily="Bahnschrift SemiBold SemiCondensed">
+            HOTEL DLA PIESÓW
+        </Label>
+        <Label Grid.Column="1" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13">
+            Login
+        </Label>
+        <Label Grid.Column="1" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="13">
+            Hasło
+        </Label>
+        <TextBlock Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Margin="11"></TextBlock>
+        <PasswordBox Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Margin="11"></PasswordBox>
     </Grid>
 </Window>

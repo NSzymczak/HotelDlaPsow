@@ -9,18 +9,21 @@ namespace HotelDlaPsow
 {
     public class ClassDailyActive
     {
-        int dogName;
-        DateTime dateActivity;
-        DateTime hourActivity;
-        string activityDescription;
+        public int idActivity { get; set; }
+        public string dogName { get; set; }
+        public DateTime dateActivity { get; set; }
+        public DateTime hourActivity { get; set; }
+        public string activityDescription { get; set; }
 
-        ClassDailyActive(int dogName,DateTime dateActivity, DateTime hourActivity, string activityDescription)
+        public ClassDailyActive(string dogName,DateTime dateActivity, DateTime hourActivity, string activityDescription)
         {
             this.dogName = dogName; 
             this.dateActivity = dateActivity;
             this.hourActivity = hourActivity;
             this.activityDescription = activityDescription;
         }
+
+        public ClassDailyActive() { }
 
     }
 }

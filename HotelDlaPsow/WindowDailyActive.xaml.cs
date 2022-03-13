@@ -17,9 +17,9 @@ namespace HotelDlaPsow
     /// <summary>
     /// Logika interakcji dla klasy WindowDailyInfo.xaml
     /// </summary>
-    public partial class WindowDailyInfo : Window
+    public partial class WindowDailyActive : Window
     {
-        public WindowDailyInfo()
+        public WindowDailyActive()
         {
             InitializeComponent();
         }
@@ -28,6 +28,7 @@ namespace HotelDlaPsow
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {
             _base.OpenConection();
+            if (TextboxName.Text != null && DatePickerDate.SelectedDate != null)
             _base.GetDailyInfoDate(TextboxName.Text, DatePickerDate.SelectedDate.Value);
             dataGridDogActive.ItemsSource = _base.collectionofActivities;
             _base.CloseConnection();

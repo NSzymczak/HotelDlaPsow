@@ -27,10 +27,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Column="2" Grid.Row="7" Margin="11" >Dodaj</Button>
-        <Button Grid.Column="3" Grid.Row="7" Margin="11">Edytuj</Button>
-        <Button Grid.Column="4" Grid.Row="7" Margin="11">Usuń</Button>
-        <DataGrid Name="dgVisits" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Margin="10,0"  Grid.RowSpan="6">
+        <Button x:Name="ButtonAdd" Grid.Column="2" Grid.Row="7" Margin="11,11,11,0" Click="ButtonAdd_Click" Height="32" VerticalAlignment="Top" >Dodaj</Button>
+        <Button x:Name="ButtonEdit" Grid.Column="3" Grid.Row="7" Margin="11" Click="ButtonEdit_Click">Edytuj</Button>
+        <Button x:Name="ButtonDeletle" Grid.Column="4" Grid.Row="7" Margin="11">Usuń</Button>
+        <DataGrid Name="dataGridDogList" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Margin="10,0"  Grid.RowSpan="6">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Imię Pieska" Width="1*" Binding="{Binding dogeName}"/>
                 <DataGridTextColumn Header="Rasa Pieska" Width="1*" Binding="{Binding breed}"/>

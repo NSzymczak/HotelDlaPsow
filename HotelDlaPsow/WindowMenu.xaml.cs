@@ -23,5 +23,23 @@ namespace HotelDlaPsow
         {
             InitializeComponent();
         }
+
+        private void ButtonDailyActive_Click(object sender, RoutedEventArgs e)
+        {
+            WindowDailyActive win = new WindowDailyActive();
+            win.Show();
+        }
+
+        private void ButtonDogList_Click(object sender, RoutedEventArgs e)
+        {
+            WindowDogList win   = new WindowDogList();  
+            win.Show();
+        }
+
+        private void ButtonVisit_Click(object sender, RoutedEventArgs e)
+        {
+            WindowVisits windowVisits = new WindowVisits();
+            windowVisits.Show();
+        }
     }
 }

@@ -23,6 +23,13 @@ namespace HotelDlaPsow
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            WindowLogin log = new WindowLogin();
+            log.Show();
         }
     }
 }

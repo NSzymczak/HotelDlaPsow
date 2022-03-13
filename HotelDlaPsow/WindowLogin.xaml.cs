@@ -23,5 +23,15 @@ namespace HotelDlaPsow
         {
             InitializeComponent();
         }
+
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            WindowMenu menu = new WindowMenu();
+            if(TextBoxLogin.Text=="a" && PasswordBoxPass.Password == "a")
+            {
+                menu.Show();
+                this.Close();
+            }
+        }
     }
 }

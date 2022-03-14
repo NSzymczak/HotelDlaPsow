@@ -5,8 +5,82 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelDlaPsow"
         mc:Ignorable="d"
-        Title="WindowDogAdd" Height="450" Width="800">
+        Title="WindowDogAdd" Height="450" Width="1200">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="200*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Imię Pieska" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Margin="113,0,0,0"/>
+        <Label Content="Sterylizacja" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="113,0,0,0"></Label>
+        <Label Content="Ostatnia Cieczka" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="89,0,0,0"></Label>
+        <Label Content="Rasa" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Margin="141,0,0,0"></Label>
+        <Label Content="umaszczenie" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Margin="106,0,0,0"></Label>
+        <Label Content="wiek" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="142,0,0,0"></Label>
+        <Label Content="waga" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" Margin="139,0,0,0"></Label>
+        <Label Content="karma" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2" Margin="135,0,0,0"></Label>
+        <Label Content="czestotliwość karmienia" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Margin="58,0,0,0"></Label>
+        <Label Content="godziny karmienia" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Margin="81,0,0,0"></Label>
+        <Label Content="Uwagi" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2" Margin="134,0,0,0"></Label>
+        <Label Content="godziny spacerów" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2" Margin="82,0,0,0"></Label>
+        <Label Content="długość spacerów" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="2" Margin="82,0,0,0"></Label>
+        <Label Content="Stan zdrowia" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="2" Margin="105,0,0,0"></Label>
+        <Label Content="wskazania weterynarza" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="6" Grid.Row="1" Grid.ColumnSpan="2" Margin="61,0,0,0"></Label>
+        <Label Content="data szczepienia" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="6" Grid.Row="2" Grid.ColumnSpan="2" Margin="90,0,0,0"></Label>
+        <Label Content="ochrona przeciw kleszczom" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="6" Grid.Row="3" Grid.ColumnSpan="2" Margin="41,0,0,0"></Label>
+        <Label Content="dane weterynarza" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="6" Grid.Row="4" Grid.ColumnSpan="2" Margin="84,0,0,0"></Label>
+        <Label Content="opis charakteru" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="6" Grid.Row="5" Grid.ColumnSpan="2" Margin="94,0,0,0"></Label>
+        <Label Content="Reakcja na koty" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="6" Grid.Row="6" Grid.ColumnSpan="2" Margin="93,0,0,0"></Label>
+        <Label Content="ulubiona zabawka" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="6" Grid.Row="7" Grid.ColumnSpan="2" Margin="82,0,0,0"></Label>
+        <Label Content="znane komendy" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.ColumnSpan="2" Margin="92,0,0,0"/>
+        <Label Content="zabiegi pielęgnacyjne" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Margin="67,0,0,0"></Label>
+        <Label Content="wcześniejsze pobyty" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="6" Grid.ColumnSpan="2" Margin="73,0,0,0"/>
+
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="0" Margin="7" Grid.Column="3"></TextBox>
+        <CheckBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="1" Margin="7" Grid.Column="3"></CheckBox>
+        <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="2" Margin="7" Grid.Column="3"></DatePicker>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="3" Margin="7" Grid.Column="3"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="4" Margin="7" Grid.Column="3"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="5" Margin="7" Grid.Column="3"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="6" Margin="7" Grid.Column="3"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="7" Margin="7" Grid.Column="3"></TextBox>
+
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="0" Margin="7" Grid.Column="5"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="1" Margin="7" Grid.Column="5"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="2" Margin="7" Grid.Column="5"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="3" Margin="7" Grid.Column="5"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="4" Margin="7" Grid.Column="5"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="5" Margin="7" Grid.Column="5"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="6" Margin="7" Grid.Column="5"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="7" Margin="7" Grid.Column="5"></TextBox>
+
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="0" Margin="7" Grid.Column="7"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="1" Margin="7" Grid.Column="7"></TextBox>
+        <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="2" Margin="7" Grid.Column="7"></DatePicker>
+        <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="3" Margin="7" Grid.Column="7"></DatePicker>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="4" Margin="7" Grid.Column="7"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="5" Margin="7" Grid.Column="7"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="6" Margin="7" Grid.Column="7"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="7" Margin="7" Grid.Column="7"></TextBox>
+
+        <Button Grid.Column="3" Grid.Row="8" FontSize="16" Margin="10,10,10,10" Click="btnAdd_Click" >Dodaj</Button>
+        <Button Grid.Column="5" Grid.Row="8" FontSize="16" Margin="10,10,10,10"  >Anuluj</Button>
     </Grid>
 </Window>

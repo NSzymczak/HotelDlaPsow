@@ -7,6 +7,33 @@
         mc:Ignorable="d"
         Title="WindowVisitsAdd" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Imię Pieska" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"></Label>
+        <Label Content="Data Rozpoczęcia" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"></Label>
+        <Label Content="Data Zakończenia" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"></Label>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="3" Margin="7" Grid.ColumnSpan="2"></TextBox>
+        <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="4" Margin="7" Grid.ColumnSpan="2"></DatePicker>
+        <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Margin="7" Grid.ColumnSpan="2"></DatePicker>
+        <Button Grid.Column="2" Grid.Row="7" FontSize="16" Margin="10" Click="btnAdd_Click" >Dodaj</Button>
+        <Button Grid.Column="4" Grid.Row="7" FontSize="16" Margin="10">Anuluj</Button>
     </Grid>
 </Window>

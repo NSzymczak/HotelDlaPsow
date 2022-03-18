@@ -37,7 +37,7 @@ namespace HotelDlaPsow
         //_______________DOG____________________
         public void GetDogs()
         {
-            SqlCommand command = new SqlCommand("getDailyInfoDate", cnn);
+            SqlCommand command = new SqlCommand("getDogInfo", cnn);
             command.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(command);
             DataTable dt = new DataTable();

@@ -22,9 +22,15 @@ namespace HotelDlaPsow
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
             }
-            catch 
+            catch
             {
-                MessageBox.Show("Błąd połączenia z bazą");
+                try
+                {
+                    connetionString = @"Data Source=KAMIL;Initial Catalog=Hotel;Integrated Security=True;";
+                    cnn = new SqlConnection(connetionString);
+                    cnn.Open();
+                }
+                catch { }
             }
         }
 
@@ -47,7 +53,6 @@ namespace HotelDlaPsow
                 ClassDogs dog = new ClassDogs();
                 dog.idDog = (int)(row["idDog"]);
                 dog.name = (string)(row["name"]);
-                MessageBox.Show(dog.name.ToString());
                 dog.sterilization = (int)row["sterilization"];
                 dog.breed = (string)row["breed"];
                 dog.color = (string)row["color"];

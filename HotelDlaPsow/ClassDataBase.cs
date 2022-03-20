@@ -157,10 +157,10 @@ namespace HotelDlaPsow
         {
             OpenConection();
             collectionofActivities.Clear();
-            SqlCommand command = new SqlCommand("getDailyInfoDate", cnn);
+            SqlCommand command = new SqlCommand("getDailyInfo", cnn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = idDog;
-            command.Parameters.AddWithValue("@dateActivity", SqlDbType.Int).Value = date;
+            command.Parameters.AddWithValue("@date", SqlDbType.Date).Value = date;
             SqlDataAdapter da = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -174,6 +174,23 @@ namespace HotelDlaPsow
                 dailyActive.hourActivity = (DateTime)(row["hourActivity"]);
                 dailyActive.activityDescription = (string)row["Description"];
             }
+        }
+
+        public string GetDogName(int idDog)
+        {
+            OpenConection();
+            collectionofActivities.Clear();
+            SqlCommand command = new SqlCommand("getDogName", cnn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = idDog;
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            foreach (DataRow row in dt.Rows)
+            {
+                return (string)row["name"];
+            }
+            return " ";
         }
 
         public void AddDailyInfoDate(ClassDailyActive classDailyActive)

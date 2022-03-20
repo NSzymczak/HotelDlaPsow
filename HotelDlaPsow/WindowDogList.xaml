@@ -30,14 +30,16 @@
         <Button x:Name="ButtonAdd" Grid.Column="2" Grid.Row="7" Margin="11,11,11,0" Click="ButtonAdd_Click" Height="32" VerticalAlignment="Top" >Dodaj</Button>
         <Button x:Name="ButtonEdit" Grid.Column="3" Grid.Row="7" Margin="11" Click="ButtonEdit_Click">Edytuj</Button>
         <Button x:Name="ButtonDeletle" Grid.Column="4" Grid.Row="7" Margin="11">Usuń</Button>
-        <DataGrid Name="dataGridDogList" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Margin="10,0"  Grid.RowSpan="6">
+        <DataGrid Name="dataGridDogList" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="7" Margin="10,0"  Grid.RowSpan="6" AutoGenerateColumns="False" >
+            
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Imię Pieska" Width="1*" Binding="{Binding dogeName}"/>
+                <DataGridTextColumn Header="Imię Pieska" Width="1*" Binding="{Binding name}"/>
                 <DataGridTextColumn Header="Rasa Pieska" Width="1*" Binding="{Binding breed}"/>
                 <DataGridTextColumn Header="Rasa Pieska" Width="1*" Binding="{Binding color}"/>
                 <DataGridTextColumn Header="Wiek Pieska" Width="1*" Binding="{Binding age}"/>
-                <DataGridTextColumn Header="Charakter" Width="2*" Binding="{Binding characterDescription}"/>
+                <DataGridTextColumn Header="Charakter"   Width="2*" Binding="{Binding characterDescription}"/>
             </DataGrid.Columns>
+            
         </DataGrid>
     </Grid>
 </Window>

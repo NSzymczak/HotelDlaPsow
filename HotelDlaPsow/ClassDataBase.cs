@@ -18,7 +18,7 @@ namespace HotelDlaPsow
             string connetionString;
             try
             {
-                connetionString = @"Data Source=";
+                connetionString = @"Data Source=DESKTOP-NGM307V;Initial Catalog=Hotel;Integrated Security=True;";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
             }
@@ -47,12 +47,11 @@ namespace HotelDlaPsow
                 ClassDogs dog = new ClassDogs();
                 dog.idDog = (int)(row["idDog"]);
                 dog.name = (string)(row["name"]);
-                dog.sterilization = (bool)row["sterilization"];
-                dog.lastEstrus = (DateTime)row["lastEstrus"];
+                dog.sterilization = (int)row["sterilization"];
                 dog.breed = (string)row["breed"];
                 dog.color = (string)row["color"];
-                dog.age = (int)row["age"];
-                dog.weight = (int)row["weight"];
+                dog.age = (double)row["age"];
+                dog.weight = (double)row["weight"];
                 dog.food = (string)row["food"];
                 dog.feedingFrequency = (int)row["feedingFrequency"];
                 dog.feedingHour = (string)row["feedingHour"];
@@ -61,11 +60,11 @@ namespace HotelDlaPsow
                 dog.lengthOfWalks = (int)row["lengthOfWalks"];
                 dog.healthStatus = (string)row["healthStatus"];
                 dog.veterinarianIndication = (string)row["veterinarianIndication"];
-                dog.Vaccination = (DateTime)row["Vaccination"];
+                dog.vaccination = (DateTime)row["Vaccination"];
                 dog.ticksProtection = (DateTime)row["ticksProtection"];
                 dog.vetInfo = (string)row["vetInfo"];
                 dog.characterDescription = (string)row["characterDescription"];
-                dog.CatsReaction = (string)row["CatsReaction"];
+                dog.catsReaction = (string)row["CatsReaction"];
                 dog.favToy = (string)row["favToy"];
                 dog.knownCommands = (string)row["knownCommands"];
                 dog.beautyTreatments = (string)row["beautyTreatments"];
@@ -75,9 +74,8 @@ namespace HotelDlaPsow
 
         public void AddDateDog(ClassDogs classDogs)
         {
-            try
-            {;
-                SqlCommand command = new SqlCommand("AddDateDog", cnn);
+            OpenConection();
+                SqlCommand command = new SqlCommand("addDateDog", cnn);
                 command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = classDogs.idDog;
                 command.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = classDogs.name;
@@ -95,11 +93,11 @@ namespace HotelDlaPsow
                 command.Parameters.AddWithValue("@lengthOfWalks", SqlDbType.NVarChar).Value = classDogs.lengthOfWalks;
                 command.Parameters.AddWithValue("@healthStatus", SqlDbType.NVarChar).Value = classDogs.healthStatus;
                 command.Parameters.AddWithValue("@veterinarianIndication", SqlDbType.NVarChar).Value = classDogs.veterinarianIndication;
-                command.Parameters.AddWithValue("@Vaccination", SqlDbType.DateTime).Value = classDogs.Vaccination;
+                command.Parameters.AddWithValue("@Vaccination", SqlDbType.DateTime).Value = classDogs.vaccination;
                 command.Parameters.AddWithValue("@ticksProtection", SqlDbType.DateTime).Value = classDogs.ticksProtection;
                 command.Parameters.AddWithValue("@vetInfo", SqlDbType.NVarChar).Value = classDogs.vetInfo;
                 command.Parameters.AddWithValue("@characterDescription", SqlDbType.NVarChar).Value = classDogs.characterDescription;
-                command.Parameters.AddWithValue("@CatsReaction", SqlDbType.NVarChar).Value = classDogs.CatsReaction;
+                command.Parameters.AddWithValue("@CatsReaction", SqlDbType.NVarChar).Value = classDogs.catsReaction;
                 command.Parameters.AddWithValue("@favToy", SqlDbType.NVarChar).Value = classDogs.favToy;
                 command.Parameters.AddWithValue("@knownCommands", SqlDbType.NVarChar).Value = classDogs.knownCommands;
                 command.Parameters.AddWithValue("@beautyTreatments", SqlDbType.NVarChar).Value = classDogs.beautyTreatments;
@@ -107,11 +105,6 @@ namespace HotelDlaPsow
                 SqlDataAdapter da = new SqlDataAdapter(command);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-            }
-            catch
-            {
-
-            }
         }
 
         public void DeletleDateDog(int id_deletle)
@@ -126,7 +119,7 @@ namespace HotelDlaPsow
 
         public void EditDateDog(ClassDogs classDogs)
         {
-            SqlCommand command = new SqlCommand("EditDateDog", cnn);
+            SqlCommand command = new SqlCommand("editDateDog", cnn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = classDogs.idDog;
             command.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = classDogs.name;
@@ -144,11 +137,11 @@ namespace HotelDlaPsow
             command.Parameters.AddWithValue("@lengthOfWalks", SqlDbType.NVarChar).Value = classDogs.lengthOfWalks;
             command.Parameters.AddWithValue("@healthStatus", SqlDbType.NVarChar).Value = classDogs.healthStatus;
             command.Parameters.AddWithValue("@veterinarianIndication", SqlDbType.NVarChar).Value = classDogs.veterinarianIndication;
-            command.Parameters.AddWithValue("@Vaccination", SqlDbType.DateTime).Value = classDogs.Vaccination;
+            command.Parameters.AddWithValue("@Vaccination", SqlDbType.DateTime).Value = classDogs.vaccination;
             command.Parameters.AddWithValue("@ticksProtection", SqlDbType.DateTime).Value = classDogs.ticksProtection;
             command.Parameters.AddWithValue("@vetInfo", SqlDbType.NVarChar).Value = classDogs.vetInfo;
             command.Parameters.AddWithValue("@characterDescription", SqlDbType.NVarChar).Value = classDogs.characterDescription;
-            command.Parameters.AddWithValue("@CatsReaction", SqlDbType.NVarChar).Value = classDogs.CatsReaction;
+            command.Parameters.AddWithValue("@CatsReaction", SqlDbType.NVarChar).Value = classDogs.catsReaction;
             command.Parameters.AddWithValue("@favToy", SqlDbType.NVarChar).Value = classDogs.favToy;
             command.Parameters.AddWithValue("@knownCommands", SqlDbType.NVarChar).Value = classDogs.knownCommands;
             command.Parameters.AddWithValue("@beautyTreatments", SqlDbType.NVarChar).Value = classDogs.beautyTreatments;
@@ -160,11 +153,14 @@ namespace HotelDlaPsow
 
 
         //_______________DAILYINFO____________________
-        public void GetDailyInfoDate(string Name, DateTime date)
+        public void GetDailyInfoDate(int idDog, DateTime date)
         {
+            OpenConection();
             collectionofActivities.Clear();
             SqlCommand command = new SqlCommand("getDailyInfoDate", cnn);
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = idDog;
+            command.Parameters.AddWithValue("@dateActivity", SqlDbType.Int).Value = date;
             SqlDataAdapter da = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -172,12 +168,28 @@ namespace HotelDlaPsow
             {
                 ClassDailyActive dailyActive = new ClassDailyActive();
 
-                dailyActive.idActivity = (int)(row["id_plant"]);
+                dailyActive.idActivity = (int)(row["idActivity"]);
                 dailyActive.dogName = (string)row["dogName"];
                 dailyActive.dateActivity = (DateTime)(row["dateActivity"]);
                 dailyActive.hourActivity = (DateTime)(row["hourActivity"]);
                 dailyActive.activityDescription = (string)row["Description"];
             }
+        }
+
+        public void AddDailyInfoDate(ClassDailyActive classDailyActive)
+        {
+            OpenConection();
+            SqlCommand command = new SqlCommand("addDailyActive", cnn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idActivity", SqlDbType.Int).Value = classDailyActive.idActivity;
+            command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = classDailyActive.idDog;
+            command.Parameters.AddWithValue("@dogName", SqlDbType.NVarChar).Value = classDailyActive.dogName;
+            command.Parameters.AddWithValue("@hourActivity", SqlDbType.NVarChar).Value = classDailyActive.hourActivity;
+            command.Parameters.AddWithValue("@dateActivity", SqlDbType.NVarChar).Value = classDailyActive.dateActivity;
+            command.Parameters.AddWithValue("@activityDescription", SqlDbType.NVarChar).Value = classDailyActive.activityDescription;
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
         }
 
     }

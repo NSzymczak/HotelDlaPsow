@@ -29,7 +29,7 @@ namespace HotelDlaPsow
         {
             _base.OpenConection();
             if (TextboxName.Text != null && DatePickerDate.SelectedDate != null)
-            _base.GetDailyInfoDate(TextboxName.Text, DatePickerDate.SelectedDate.Value);
+            _base.GetDailyInfoDate(Convert.ToInt32(TextboxName.Text), DatePickerDate.SelectedDate.Value);
             dataGridDogActive.ItemsSource = _base.collectionofActivities;
             _base.CloseConnection();
         }

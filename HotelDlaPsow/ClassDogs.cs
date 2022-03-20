@@ -10,12 +10,12 @@ namespace HotelDlaPsow
     {
         public int idDog { get; set; }                     //id
         public string name { get; set; }                   //imie
-        public bool sterilization { get; set; }            //sterylizacja
+        public int sterilization { get; set; }            //sterylizacja
         public DateTime lastEstrus { get; set; }           //ostatnia cieczka
         public string breed { get; set; }                  //rasa
         public string color { get; set; }                  //umaszczenie
-        public float age { get; set; }                     //wiek
-        public float weight { get; set; }                  //waga
+        public double age { get; set; }                     //wiek
+        public double weight { get; set; }                  //waga
         public string food { get; set; }                   //karma
         public int feedingFrequency { get; set; }          //czestotliwość karmienia
         public string feedingHour { get; set; }            //godziny karmienia
@@ -24,11 +24,11 @@ namespace HotelDlaPsow
         public int lengthOfWalks { get; set; }             //długość spacerów
         public string healthStatus { get; set; }           //Stan zdrowia
         public string veterinarianIndication { get; set; } //wskazania weterynarza
-        public DateTime Vaccination { get; set; }          //data ostatniego szczepienia
+        public DateTime vaccination { get; set; }          //data ostatniego szczepienia
         public DateTime ticksProtection { get; set; }      //ochrona przeciw kleszczom
         public string vetInfo { get; set; }                //dane weterynarza
         public string characterDescription { get; set; }   //opis charakteru
-        public string CatsReaction { get; set; }           //Reakcja na koty
+        public string catsReaction { get; set; }           //Reakcja na koty
         public string favToy { get; set; }                 //ulubiona zabawka
         public string knownCommands { get; set; }          //znane komendy
         public string beautyTreatments { get; set; }       //zabiegi pielęgnacyjne
@@ -54,11 +54,11 @@ namespace HotelDlaPsow
             dog.lengthOfWalks = lengthOfWalks;
             dog.healthStatus = healthStatus;
             dog.veterinarianIndication = veterinarianIndication;
-            dog.Vaccination = Vaccination;
+            dog.vaccination = vaccination;
             dog.ticksProtection = ticksProtection;
             dog.vetInfo = vetInfo;
             dog.characterDescription = characterDescription;
-            dog.CatsReaction = CatsReaction;
+            dog.catsReaction = catsReaction;
             dog.favToy = favToy;
             dog.knownCommands = knownCommands;
             dog.beautyTreatments = beautyTreatments;

@@ -10,6 +10,7 @@ namespace HotelDlaPsow
     public class ClassDailyActive
     {
         public int idActivity { get; set; }
+        public int idDog { get; set; }
         public string dogName { get; set; }
         public DateTime dateActivity { get; set; }
         public DateTime hourActivity { get; set; }
@@ -17,6 +18,8 @@ namespace HotelDlaPsow
 
         public ClassDailyActive(string dogName,DateTime dateActivity, DateTime hourActivity, string activityDescription)
         {
+            this.idActivity = idActivity;
+            this.idDog = idDog;
             this.dogName = dogName; 
             this.dateActivity = dateActivity;
             this.hourActivity = hourActivity;

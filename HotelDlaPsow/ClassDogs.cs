@@ -11,7 +11,6 @@ namespace HotelDlaPsow
         public int idDog { get; set; }                     //id
         public string name { get; set; }                   //imie
         public int sterilization { get; set; }            //sterylizacja
-        public DateTime lastEstrus { get; set; }           //ostatnia cieczka
         public string breed { get; set; }                  //rasa
         public string color { get; set; }                  //umaszczenie
         public double age { get; set; }                     //wiek
@@ -41,7 +40,7 @@ namespace HotelDlaPsow
             dog.idDog = idDog;
             dog.name = name;
             dog.sterilization = sterilization;
-            dog.lastEstrus = lastEstrus;
+            
             dog.breed = breed;
             dog.color = color;
             dog.age = age;

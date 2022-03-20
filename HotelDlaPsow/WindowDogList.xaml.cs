@@ -25,8 +25,9 @@ namespace HotelDlaPsow
             InitializeComponent();
             _base.OpenConection();
             _base.GetDogs();
+            MessageBox.Show(_base.collectionofDogs.Count.ToString());
             dataGridDogList.ItemsSource = _base.collectionofDogs;
-            _base.CloseConnection();
+           // _base.CloseConnection();
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)

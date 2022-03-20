@@ -47,6 +47,7 @@ namespace HotelDlaPsow
                 ClassDogs dog = new ClassDogs();
                 dog.idDog = (int)(row["idDog"]);
                 dog.name = (string)(row["name"]);
+                MessageBox.Show(dog.name.ToString());
                 dog.sterilization = (int)row["sterilization"];
                 dog.breed = (string)row["breed"];
                 dog.color = (string)row["color"];
@@ -69,6 +70,7 @@ namespace HotelDlaPsow
                 dog.knownCommands = (string)row["knownCommands"];
                 dog.beautyTreatments = (string)row["beautyTreatments"];
                 dog.hotelStays = (string)row["hotelStays"];
+                collectionofDogs.Add(dog);
             }
         }
 
@@ -80,7 +82,6 @@ namespace HotelDlaPsow
                 command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = classDogs.idDog;
                 command.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = classDogs.name;
                 command.Parameters.AddWithValue("@sterilization", SqlDbType.NVarChar).Value = classDogs.sterilization;
-                command.Parameters.AddWithValue("@lastEstrus", SqlDbType.DateTime).Value = classDogs.lastEstrus;
                 command.Parameters.AddWithValue("@breed", SqlDbType.NVarChar).Value = classDogs.breed;
                 command.Parameters.AddWithValue("@color", SqlDbType.NVarChar).Value = classDogs.color;
                 command.Parameters.AddWithValue("@age", SqlDbType.Int).Value = classDogs.age;
@@ -124,7 +125,6 @@ namespace HotelDlaPsow
             command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = classDogs.idDog;
             command.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = classDogs.name;
             command.Parameters.AddWithValue("@sterilization", SqlDbType.NVarChar).Value = classDogs.sterilization;
-            command.Parameters.AddWithValue("@lastEstrus", SqlDbType.DateTime).Value = classDogs.lastEstrus;
             command.Parameters.AddWithValue("@breed", SqlDbType.NVarChar).Value = classDogs.breed;
             command.Parameters.AddWithValue("@color", SqlDbType.NVarChar).Value = classDogs.color;
             command.Parameters.AddWithValue("@age", SqlDbType.Int).Value = classDogs.age;

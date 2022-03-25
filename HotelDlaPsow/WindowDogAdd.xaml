@@ -28,9 +28,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="Imię Pieska" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Margin="113,0,0,0"/>
-        <Label Content="Sterylizacja" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Margin="113,0,0,0"></Label>
-        <Label Content="Ostatnia Cieczka" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="89,0,0,0"></Label>
+        <Label Content="Imię Pieska" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1 " Margin="113,0,0,0"/>
+        <Label Content="Sterylizacja" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="2" Margin="113,0,0,0"></Label>
         <Label Content="Rasa" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="3" Grid.ColumnSpan="2" Margin="141,0,0,0"></Label>
         <Label Content="umaszczenie" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4" Grid.ColumnSpan="2" Margin="106,0,0,0"></Label>
         <Label Content="wiek" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" Margin="142,0,0,0"></Label>
@@ -53,8 +52,8 @@
         <Label Content="zabiegi pielęgnacyjne" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Margin="67,0,0,0"></Label>
         <Label Content="wcześniejsze pobyty" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="6" Grid.ColumnSpan="2" Margin="73,0,0,0"/>
 
-        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="0" Margin="7" Grid.Column="3" Text="{Binding BindingGroupName, Mode=TwoWay}"></TextBox>
-        <CheckBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="1" Margin="7" Grid.Column="3"></CheckBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="1" Margin="7" Grid.Column="3" Text="{Binding name, Mode=TwoWay}"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="2" Margin="7" Grid.Column="3" Text="{Binding name, Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="3" Margin="7" Grid.Column="3" Text="{Binding breed, Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="4" Margin="7" Grid.Column="3" Text="{Binding color,Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="5" Margin="7" Grid.Column="3" Text="{Binding age,Mode=TwoWay}"></TextBox>
@@ -67,16 +66,18 @@
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="3" Margin="7" Grid.Column="5" Text="{Binding feedingHour,Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="4" Margin="7" Grid.Column="5" Text="{Binding feedingNotes,Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="5" Margin="7" Grid.Column="5" Text="{Binding hoursOfWalks,Mode=TwoWay}"></TextBox>
-        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="6" Margin="7" Grid.Column="5" Text="{Binding lenghtOfWalks,Mode=TwoWay}"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="6" Margin="7" Grid.Column="5" Text="{Binding lengthOfWalks,Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="7" Margin="7" Grid.Column="5" Text="{Binding healthStatus,Mode=TwoWay}"></TextBox>
 
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="0" Margin="7" Grid.Column="7" Text="{Binding hotelStays,Mode=TwoWay}"></TextBox>
-        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="1" Margin="7" Grid.Column="7" Text="{Binding veterinarianIndication,Mode=TwoWay}"></TextBox>
-        <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="2" Margin="7" Grid.Column="7" Text="{Binding Vaccination,Mode=TwoWay}"></DatePicker>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="1" Margin="7" Grid.Column="7" Text="{Binding veterinarianIndication,Mode=TwoWay}" />
+
+        <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="2" Margin="7" Grid.Column="7" Text="{Binding vaccination,    Mode=TwoWay}"></DatePicker>
         <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="3" Margin="7" Grid.Column="7" Text="{Binding ticksProtection,Mode=TwoWay}"></DatePicker>
+        
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="4" Margin="7" Grid.Column="7" Text="{Binding vetInfo,Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="5" Margin="7" Grid.Column="7" Text="{Binding characterDescription,Mode=TwoWay}"></TextBox>
-        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="6" Margin="7" Grid.Column="7" Text="{Binding CatsReaction,Mode=TwoWay}"></TextBox>
+        <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="6" Margin="7" Grid.Column="7" Text="{Binding catsReaction,Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="7" Margin="7" Grid.Column="7" Text="{Binding favToy,Mode=TwoWay}"></TextBox>
 
         <Button Grid.Column="3" Grid.Row="8" FontSize="16" Margin="10,10,10,10" Click="btnAdd_Click" >Dodaj</Button>

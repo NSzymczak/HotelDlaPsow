@@ -31,13 +31,17 @@ namespace HotelDlaPsow
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {
-            ClassDogs _dogs = new ClassDogs();
-            WindowDogAdd dogAdd = new WindowDogAdd(_dogs);
-            dogAdd.DataContext = _dogs;
-            dogAdd.ShowDialog();
-            _base.collectionofDogs.Add(_dogs);
-            _base.AddDateDog(_dogs);
-            dataGridDogList.Items.Refresh();
+            try
+            {
+                ClassDogs _dogs = new ClassDogs();
+                WindowDogAdd dogAdd = new WindowDogAdd(_dogs);
+                dogAdd.DataContext = _dogs;
+                dogAdd.ShowDialog();
+                _base.collectionofDogs.Add(_dogs);
+                _base.AddDateDog(_dogs);
+                dataGridDogList.Items.Refresh();
+            }
+            catch { }
         }
 
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)

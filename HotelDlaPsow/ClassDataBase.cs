@@ -41,7 +41,7 @@ namespace HotelDlaPsow
 
 
         //_______________DOG____________________
-        public void GetDogs()
+        public void GetDogs()                                 //Wczytaj psiaki 
         {
             SqlCommand command = new SqlCommand("getDogInfo", cnn);
             command.CommandType = CommandType.StoredProcedure;
@@ -79,7 +79,7 @@ namespace HotelDlaPsow
             }
         }
 
-        public void AddDateDog(ClassDogs classDogs)
+        public void AddDateDog(ClassDogs classDogs)           //Dodaj psiaka   
         {
             OpenConection();
                 SqlCommand command = new SqlCommand("addDateDog", cnn);
@@ -113,7 +113,7 @@ namespace HotelDlaPsow
                 da.Fill(dt);
         }
 
-        public void DeletleDateDog(int id_deletle)
+        public void DeletleDateDog(int id_deletle)            //Usuń psiaka    
         {
             SqlCommand cmd = new SqlCommand("deleteDog", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -123,7 +123,7 @@ namespace HotelDlaPsow
             da.Fill(dt);
         }
 
-        public void EditDateDog(ClassDogs classDogs)
+        public void EditDateDog(ClassDogs classDogs)          //Edytuj psiaka  
         {
             SqlCommand command = new SqlCommand("editDateDog", cnn);
             command.CommandType = CommandType.StoredProcedure;
@@ -158,7 +158,7 @@ namespace HotelDlaPsow
 
 
         //_______________DAILYINFO____________________
-        public void GetDailyInfoDate(int idDog, DateTime date)
+        public void GetDailyInfoDate(int idDog, DateTime date)                //Wczytaj dzienne informacje  
         {
             OpenConection();
             collectionofActivities.Clear();
@@ -174,14 +174,14 @@ namespace HotelDlaPsow
                 ClassDailyActive dailyActive = new ClassDailyActive();
 
                 dailyActive.idActivity = (int)(row["idActivity"]);
-                dailyActive.dogName = (string)row["dogName"];
                 dailyActive.dateActivity = (DateTime)(row["dateActivity"]);
-                dailyActive.hourActivity = (DateTime)(row["hourActivity"]);
-                dailyActive.activityDescription = (string)row["Description"];
+                dailyActive.hourActivity = (TimeSpan)(row["hourActivity"]);
+                dailyActive.activityDescription = (string)row["activityDescription"];
+                collectionofActivities.Add(dailyActive);
             }
         }
 
-        public string GetDogName(int idDog)
+        public string GetDogName(int idDog)                                   //Sprawdź imie pieska         
         {
             OpenConection();
             collectionofActivities.Clear();
@@ -198,7 +198,7 @@ namespace HotelDlaPsow
             return " ";
         }
 
-        public void AddDailyInfoDate(ClassDailyActive classDailyActive)
+        public void AddDailyInfoDate(ClassDailyActive classDailyActive)       //Dodaj aktywność pieska      
         {
             OpenConection();
             SqlCommand command = new SqlCommand("addDailyActive", cnn);
@@ -214,5 +214,30 @@ namespace HotelDlaPsow
             da.Fill(dt);
         }
 
+        public void DeletleDailyInfoDate(int idDeletle)                       //Usuń aktywność pieska       
+        {
+
+            SqlCommand cmd = new SqlCommand("deleteDailyInfoDate", cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = idDeletle;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+        }
+    
+        public void EditDailyInfoDate(ClassDailyActive classDailyActive)
+        {
+
+        }
+
+        
+        //_______________Wizyty______________________
+        public void GetVisits() { }
+
+        public void AddVisits() { }
+
+        public void DeleteVisit() { }
+
+        public void EditVisit() { }
     }
 }

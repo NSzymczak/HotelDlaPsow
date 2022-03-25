@@ -37,10 +37,10 @@
         <DatePicker x:Name="DatePickerDate" Grid.Row="1" Grid.Column="4" Margin="11"/>
         <Button x:Name="ButtonSearch" Grid.Column="5" Grid.Row="1" Margin="11" Content="Szukaj" Click="ButtonSearch_Click"/>
 
-        <DataGrid Name="dataGridDogActive"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5"  Grid.RowSpan="5">
+        <DataGrid Name="dataGridDogActive"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5"  Grid.RowSpan="5" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Godzina" Width="1*" Binding="{Binding hourActivity}"/>
-                <DataGridTextColumn Header="Aktywność" Width="2*" Binding="{Binding Activity}"/>
+                <DataGridTextColumn Header="Aktywność" Width="2*" Binding="{Binding activityDescription}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="ButtonAdd" Grid.Column="2" Grid.Row="8" Margin="11,11,11,11" Content="Dodaj"/>

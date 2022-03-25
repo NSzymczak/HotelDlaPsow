@@ -13,10 +13,10 @@ namespace HotelDlaPsow
         public int idDog { get; set; }
         public string dogName { get; set; }
         public DateTime dateActivity { get; set; }
-        public DateTime hourActivity { get; set; }
+        public TimeSpan hourActivity { get; set; }
         public string activityDescription { get; set; }
 
-        public ClassDailyActive(string dogName,DateTime dateActivity, DateTime hourActivity, string activityDescription)
+        public ClassDailyActive(string dogName,DateTime dateActivity, TimeSpan hourActivity, string activityDescription)
         {
             this.idActivity = idActivity;
             this.idDog = idDog;

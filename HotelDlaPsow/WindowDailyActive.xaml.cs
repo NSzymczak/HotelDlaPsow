@@ -27,17 +27,18 @@ namespace HotelDlaPsow
         ClassDataBase _base = new ClassDataBase();
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {
-            if (TextboxName.Text != null && DatePickerDate.SelectedDate != null)
-            {
-                _base.OpenConection();
-                _base.GetDailyInfoDate(Convert.ToInt32(TextboxName.Text), DatePickerDate.SelectedDate.Value);
-                dataGridDogActive.ItemsSource = _base.collectionofActivities;
-                _base.CloseConnection();
-            }
+
             if (TextboxName.Text != null)
             {
                 _base.OpenConection();
                 LabelName.Content = _base.GetDogName(Convert.ToInt32(TextboxName.Text));
+                _base.CloseConnection();
+            }
+            if (TextboxName.Text != null && DatePickerDate.SelectedDate != null)
+            {
+                _base.OpenConection();
+                _base.GetDailyInfoDate(Convert.ToInt32(TextboxName.Text), DatePickerDate.SelectedDate.Value);
+                dataGridActivity.ItemsSource = _base.collectionofActivities;
                 _base.CloseConnection();
             }
                 

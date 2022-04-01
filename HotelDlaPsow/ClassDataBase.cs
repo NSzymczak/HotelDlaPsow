@@ -10,6 +10,7 @@ namespace HotelDlaPsow
     {
         public ObservableCollection<ClassDailyActive> collectionofActivities = new ObservableCollection<ClassDailyActive>();
         public ObservableCollection<ClassDogs> collectionofDogs = new ObservableCollection<ClassDogs>();
+        public ObservableCollection<ClassVisits> collectionofVisits = new ObservableCollection<ClassVisits>();
 
 
         private SqlConnection cnn;
@@ -174,7 +175,6 @@ namespace HotelDlaPsow
                 ClassDailyActive dailyActive = new ClassDailyActive();
 
                 dailyActive.idActivity = (int)(row["idActivity"]);
-                dailyActive.dateActivity = (DateTime)(row["dateActivity"]);
                 dailyActive.hourActivity = (TimeSpan)(row["hourActivity"]);
                 dailyActive.activityDescription = (string)row["activityDescription"];
                 collectionofActivities.Add(dailyActive);
@@ -230,10 +230,25 @@ namespace HotelDlaPsow
 
         }
 
-        
-        //_______________Wizyty______________________
-        public void GetVisits() { }
 
+        //_______________Wizyty______________________
+        public void GetVisits()
+        {
+            SqlCommand command = new SqlCommand("getVisits", cnn);
+            command.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            foreach (DataRow row in dt.Rows)
+            {
+                ClassVisits visits = new ClassVisits();
+                visits.idVisit = (int)(row["idVisit"]);
+                visits.dogsName = (string)(row["name"]);
+                visits.beginDate = (DateTime)row["beginDate"];
+                visits.endDate = (DateTime)row["endDate"];
+                collectionofVisits.Add(visits);
+            }
+        }
         public void AddVisits() { }
 
         public void DeleteVisit() { }

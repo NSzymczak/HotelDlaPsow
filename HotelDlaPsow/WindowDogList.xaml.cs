@@ -27,7 +27,7 @@ namespace HotelDlaPsow
             _base.GetDogs();
             dataGridDogList.ItemsSource = _base.collectionofDogs;
             _base.CloseConnection();
-        }
+        } 
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
         {

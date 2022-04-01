@@ -8,9 +8,12 @@ namespace HotelDlaPsow
 {
     public class ClassVisits
     {
-        int idVist;
-        string dogsName;
-        DateTime beginDate;
-        DateTime endDate;
+        public int idVisit { get; set; }
+        public string dogsName { get; set; }
+        public DateTime beginDate { get; set; }
+        public DateTime endDate { get; set; }
+
+        public ClassVisits() { }
+
     }
 }

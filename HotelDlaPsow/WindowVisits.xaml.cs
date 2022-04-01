@@ -19,9 +19,15 @@ namespace HotelDlaPsow
     /// </summary>
     public partial class WindowVisits : Window
     {
+        ClassDataBase _base = new ClassDataBase();
         public WindowVisits()
         {
             InitializeComponent();
+            _base.OpenConection();
+            _base.GetVisits();
+            dataGridVisits.ItemsSource = _base.collectionofVisits;
+            _base.CloseConnection();
         }
     }
+    
 }

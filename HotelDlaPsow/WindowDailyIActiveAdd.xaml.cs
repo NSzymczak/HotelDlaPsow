@@ -19,6 +19,7 @@ namespace HotelDlaPsow
     /// </summary>
     public partial class WindowDailyActiveAdd : Window
     {
+        public bool IsOkPressed { get; set; }
         public WindowDailyActiveAdd(ClassDailyActive classDailyActive)
         {
             InitializeComponent();
@@ -26,12 +27,14 @@ namespace HotelDlaPsow
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            IsOkPressed = true;
+            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            IsOkPressed = false;
+            this.Close();
         }
     }
 }

@@ -19,19 +19,23 @@ namespace HotelDlaPsow
     /// </summary>
     public partial class WindowVisitsAdd : Window
     {
-        public WindowVisitsAdd()
+        ClassDataBase _base = new ClassDataBase();
+        public bool IsOkPressed { get; set; }
+        public WindowVisitsAdd(ClassVisits classVisits)
         {
             InitializeComponent();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            IsOkPressed = true;
+            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            IsOkPressed = false;
+            this.Close();
         }
     }
 }

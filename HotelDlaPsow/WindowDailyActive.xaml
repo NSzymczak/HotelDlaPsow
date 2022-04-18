@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelDlaPsow"
         mc:Ignorable="d"
-        Title="WindowDailyInfo" Height="450" Width="800">
+        Title="WindowDailyInfo" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -43,9 +43,9 @@
                 <DataGridTextColumn Header="Aktywność" Width="3*" Binding="{Binding activityDescription}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="ButtonAdd" Grid.Column="2" Grid.Row="8" Margin="11,11,11,11" Content="Dodaj"/>
-        <Button x:Name="ButtonEdit" Grid.Column="3" Grid.Row="8" Margin="11,11,11,11" Content="Edytuj"/>
-        <Button x:Name="ButtonDelete" Grid.Column="4" Grid.Row="8" Margin="11,11,11,11" Content="Usuń"/>
+        <Button x:Name="ButtonAdd" Grid.Column="2" Grid.Row="8" Margin="11,11,11,11" Content="Dodaj" Click="ButtonAdd_Click" IsEnabled="False"/>
+        <Button x:Name="ButtonEdit" Grid.Column="3" Grid.Row="8" Margin="11,11,11,11" Content="Edytuj" Click="ButtonEdit_Click" IsEnabled="False"/>
+        <Button x:Name="ButtonDelete" Grid.Column="4" Grid.Row="8" Margin="11,11,11,11" Content="Usuń" Click="ButtonDelete_Click" IsEnabled="False"/>
 
     </Grid>
 </Window>

@@ -28,6 +28,19 @@ namespace HotelDlaPsow
             dataGridVisits.ItemsSource = _base.collectionofVisits;
             _base.CloseConnection();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ClassVisits visits = new ClassVisits();
+            visits.beginDate=DateTime.Now;
+            visits.endDate = DateTime.Now;
+            WindowVisitsAdd visitsAdd = new WindowVisitsAdd(visits);
+            visitsAdd.DataContext = visits;
+            visitsAdd.ShowDialog();
+            _base.AddVisits(visits);
+            dataGridVisits.Items.Clear();
+            _base.GetVisits();
+        }
     }
     
 }

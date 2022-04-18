@@ -9,7 +9,9 @@ namespace HotelDlaPsow
     public class ClassVisits
     {
         public int idVisit { get; set; }
+        public int idDog { get; set; }
         public string dogsName { get; set; }
+        public string status {get; set;}
         public DateTime beginDate { get; set; }
         public DateTime endDate { get; set; }
 

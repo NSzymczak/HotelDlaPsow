@@ -16,7 +16,7 @@ namespace HotelDlaPsow
         public TimeSpan hourActivity { get; set; }
         public string activityDescription { get; set; }
 
-        public ClassDailyActive(string dogName,DateTime dateActivity, TimeSpan hourActivity, string activityDescription)
+        public ClassDailyActive(int idActivity,int idDog,string dogName,DateTime dateActivity, TimeSpan hourActivity, string activityDescription)
         {
             this.idActivity = idActivity;
             this.idDog = idDog;

@@ -27,13 +27,14 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Grid.Column="2" Grid.Row="7" Margin="11">Dodaj</Button>
+        <Button Grid.Column="2" Grid.Row="7" Margin="11" Click="Button_Click">Dodaj</Button>
         <Button Grid.Column="3" Grid.Row="7" Margin="11">Edytuj</Button>
         <Button Grid.Column="4" Grid.Row="7" Margin="11">Usuń</Button>
         <DataGrid Name="dataGridVisits" AutoGenerateColumns="False" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="6">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID Wizyty" Width="142" Binding="{Binding idVisit}"/>
                 <DataGridTextColumn Header="Imię Pieska" Width="142" Binding="{Binding dogsName}"/>
+                <DataGridTextColumn Header="Status Wizyty" Width="142" Binding="{Binding status}"/>
                 <DataGridTextColumn Header="Data przyjęcia" Width="142" Binding="{Binding beginDate}"/>
                 <DataGridTextColumn Header="Data wydania" Width="142" Binding="{Binding endDate}"/>
             </DataGrid.Columns>

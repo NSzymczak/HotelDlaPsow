@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelDlaPsow"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="WindowDogAdd" Height="450" Width="1200">
     <Grid>
@@ -72,8 +73,8 @@
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="0" Margin="7" Grid.Column="7" Text="{Binding hotelStays,Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="1" Margin="7" Grid.Column="7" Text="{Binding veterinarianIndication,Mode=TwoWay}" />
 
-        <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="2" Margin="7" Grid.Column="7" Text="{Binding vaccination,    Mode=TwoWay}"></DatePicker>
-        <DatePicker HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="3" Margin="7" Grid.Column="7" Text="{Binding ticksProtection,Mode=TwoWay}"></DatePicker>
+        <DatePicker HorizontalContentAlignment="Center"  VerticalContentAlignment="Center"  Grid.Row="2" Margin="7" Grid.Column="7" Text="{Binding vaccination,    Mode=TwoWay}"></DatePicker>
+        <DatePicker HorizontalContentAlignment="Center"  VerticalContentAlignment="Center"  Grid.Row="3" Margin="7" Grid.Column="7" Text="{Binding ticksProtection,Mode=TwoWay}"></DatePicker>
         
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="4" Margin="7" Grid.Column="7" Text="{Binding vetInfo,Mode=TwoWay}"></TextBox>
         <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Grid.Row="5" Margin="7" Grid.Column="7" Text="{Binding characterDescription,Mode=TwoWay}"></TextBox>

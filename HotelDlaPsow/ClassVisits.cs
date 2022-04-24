@@ -17,5 +17,13 @@ namespace HotelDlaPsow
 
         public ClassVisits() { }
 
+        public ClassVisits(ClassVisits v) 
+        {
+           idVisit = v.idVisit;
+            idDog = v.idDog;    
+            status = v.status;
+            beginDate = v.beginDate;
+            endDate = v.endDate;
+        }
     }
 }

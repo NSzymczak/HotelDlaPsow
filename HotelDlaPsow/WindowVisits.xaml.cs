@@ -38,7 +38,7 @@ namespace HotelDlaPsow
             visitsAdd.DataContext = visits;
             visitsAdd.ShowDialog();
             _base.AddVisits(visits);
-            dataGridVisits.Items.Clear();
+            _base.collectionofVisits.Clear();
             _base.GetVisits();
         }
 
@@ -46,7 +46,7 @@ namespace HotelDlaPsow
         {
             if (dataGridVisits.SelectedItem != null)
             {
-                ClassVisits visits = new ClassVisits();
+                ClassVisits visits = new ClassVisits((ClassVisits)dataGridVisits.SelectedItem);
                 visits.beginDate = DateTime.Now;
                 visits.endDate = DateTime.Now;
                 WindowVisitsAdd visitsAdd = new WindowVisitsAdd(visits);
@@ -57,7 +57,9 @@ namespace HotelDlaPsow
                     int index = _base.collectionofVisits.IndexOf((ClassVisits)dataGridVisits.SelectedItem);
                     _base.collectionofVisits[index] = visits;
                     _base.EditVisit(visits);
-                    dataGridVisits.Items.Refresh();
+                    _base.collectionofVisits.Clear();
+                    _base.GetVisits();
+                    dataGridVisits.ItemsSource = _base.collectionofVisits;
                 }
             }
             else
@@ -69,7 +71,14 @@ namespace HotelDlaPsow
 
         private void buttonDeletele_Click(object sender, RoutedEventArgs e)
         {
-
+            if (dataGridVisits.SelectedItem != null)
+            {
+                _base.DeleteVisit(((ClassVisits)dataGridVisits.SelectedItem).idVisit);
+                int index = _base.collectionofVisits.IndexOf((ClassVisits)dataGridVisits.SelectedItem);
+                _base.collectionofVisits.RemoveAt(index);
+            }
+            else
+                MessageBox.Show("Nie wybrano obiektu do usunięcia");
         }
     }
     

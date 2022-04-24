@@ -28,5 +28,15 @@ namespace HotelDlaPsow
 
         public ClassDailyActive() { }
 
+        public ClassDailyActive(ClassDailyActive d) 
+        {
+            idActivity = d.idActivity;
+            idDog= d.idDog;
+            dogName = d.dogName;
+            dateActivity=d.dateActivity;
+            hourActivity=d.hourActivity;
+            activityDescription=d.activityDescription;
+
+        }
     }
 }

@@ -34,9 +34,9 @@
         <Label Content="Data Zakończenia" FontSize="16" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"></Label>
         <TextBox HorizontalContentAlignment="Center" Text="{Binding idDog}" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="2" Margin="7" Grid.ColumnSpan="2"></TextBox>
         <TextBox HorizontalContentAlignment="Center" Text="{Binding status}" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="3" Margin="7" Grid.ColumnSpan="2"></TextBox>
-        <DatePicker x:Name="dateTimePickerRozpoczecie" HorizontalContentAlignment="Center" Text="{Binding beginDate}"  VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="4" Margin="7" Grid.ColumnSpan="2" Background="White" SelectedDate="{Binding DisplayDate.Date.Date.Date.Date.Date.Date.Date.Date.Date.Date.Date.Date.Date.Date.Date.Date, ElementName=dateTimePickerRozpoczecie, Mode=OneWay}"></DatePicker>
-        <DatePicker x:Name="dateTimePickerZakonczenie" HorizontalContentAlignment="Center" Text="{Binding beginDate}"  VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Margin="7" Grid.ColumnSpan="2"></DatePicker>
-        <Button Grid.Column="2" Grid.Row="7" FontSize="16" Margin="10" Click="btnAdd_Click" >Dodaj</Button>
+        <DatePicker x:Name="dateTimePickerRozpoczecie" HorizontalContentAlignment="Center" Text="{Binding beginDate}"  VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="4" Margin="7" Grid.ColumnSpan="2" Background="White" SelectedDate="{Binding DisplayDate.Date, ElementName=dateTimePickerRozpoczecie, Mode=OneWay}"></DatePicker>
+        <DatePicker x:Name="dateTimePickerZakonczenie" HorizontalContentAlignment="Center" Text="{Binding endDate}"  VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Margin="7" Grid.ColumnSpan="2" SelectedDate="{Binding DisplayDate.Date, ElementName=dateTimePickerZakonczenie, Mode=OneWay}"></DatePicker>
+        <Button Grid.Column="2" Grid.Row="7" FontSize="16" Margin="10,10,10,0" Click="btnAdd_Click" Height="28" VerticalAlignment="Top" >Dodaj</Button>
         <Button Grid.Column="4" Grid.Row="7" FontSize="16" Margin="10" Click="Button_Click">Anuluj</Button>
     </Grid>
 </Window>

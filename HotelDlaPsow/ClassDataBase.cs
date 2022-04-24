@@ -19,20 +19,22 @@ namespace HotelDlaPsow
             string connetionString;
             try
             {
-                connetionString = @"Data Source=KAMIL;Initial Catalog=Hotel;Integrated Security=True;";
+                connetionString = @"Data Source=DESKTOP-NGM307V;Initial Catalog=Hotel;Integrated Security=True";
+
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
             }
             catch
             {
-                try
-                {
-                    connetionString = @"Data Source=KAMIL;Initial Catalog=Hotel;Integrated Security=True;";
-                    cnn = new SqlConnection(connetionString);
-                    cnn.Open();
-                }
-                catch { }
+
             }
+            //try
+            //{
+            //    connetionString = @"Data Source=KAMIL;Initial Catalog=Hotel;Integrated Security=True;";
+            //    cnn = new SqlConnection(connetionString);
+            //    cnn.Open();
+            //}
+            //catch { }
         }
 
         public void CloseConnection()
@@ -173,7 +175,8 @@ namespace HotelDlaPsow
             foreach (DataRow row in dt.Rows)
             {
                 ClassDailyActive dailyActive = new ClassDailyActive();
-
+                dailyActive.idDog = idDog;
+                dailyActive.dateActivity= date;
                 dailyActive.idActivity = (int)(row["idActivity"]);
                 dailyActive.hourActivity = (TimeSpan)(row["hourActivity"]);
                 dailyActive.activityDescription = (string)row["activityDescription"];
@@ -229,7 +232,6 @@ namespace HotelDlaPsow
             command.Parameters.AddWithValue("@hourActivity", SqlDbType.Time).Value = classDailyActive.hourActivity;
             command.Parameters.AddWithValue("@dateActivity", SqlDbType.Date).Value = classDailyActive.dateActivity;
             command.Parameters.AddWithValue("@activityDescription", SqlDbType.NVarChar).Value = classDailyActive.activityDescription;
-            MessageBox.Show("ok"+classDailyActive.hourActivity);
             SqlDataAdapter da = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -249,7 +251,18 @@ namespace HotelDlaPsow
     
         public void EditDailyInfoDate(ClassDailyActive classDailyActive)
         {
-
+            OpenConection();
+            SqlCommand command = new SqlCommand("editDailyInfoDate", cnn);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idActivity", SqlDbType.Int).Value = classDailyActive.idActivity;
+            command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = classDailyActive.idDog;
+            command.Parameters.AddWithValue("@hourActivity", SqlDbType.Time).Value = classDailyActive.hourActivity;
+            command.Parameters.AddWithValue("@dateActivity", SqlDbType.Date).Value = classDailyActive.dateActivity;
+            command.Parameters.AddWithValue("@activityDescription", SqlDbType.NVarChar).Value = classDailyActive.activityDescription;
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            CloseConnection();
         }
 
 
@@ -271,6 +284,7 @@ namespace HotelDlaPsow
                     idVisit = visits.idVisit;
                 }
                 visits.dogsName = (string)(row["name"]);
+                visits.idDog=(int)(row["idDog"]);
                 visits.status=(string)row["status"];
                 visits.beginDate = (DateTime)row["beginDate"];
                 visits.endDate = (DateTime)row["endDate"];
@@ -282,6 +296,7 @@ namespace HotelDlaPsow
             OpenConection();
             SqlCommand command = new SqlCommand("addVisit", cnn);
             command.CommandType = CommandType.StoredProcedure;
+            idVisit++;
             command.Parameters.AddWithValue("@idVisit", SqlDbType.Int).Value = idVisit;
             command.Parameters.AddWithValue("@idDog", SqlDbType.NVarChar).Value = visits.idDog;
             command.Parameters.AddWithValue("@status", SqlDbType.NVarChar).Value = visits.status;
@@ -294,9 +309,9 @@ namespace HotelDlaPsow
 
         public void DeleteVisit(int id_deletle) 
         {
-            SqlCommand cmd = new SqlCommand("deleteDog", cnn);
+            SqlCommand cmd = new SqlCommand("deleteVisit", cnn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Id", SqlDbType.Int).Value = id_deletle;
+            cmd.Parameters.AddWithValue("@idVisit", SqlDbType.Int).Value = id_deletle;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -304,7 +319,7 @@ namespace HotelDlaPsow
 
         public void EditVisit(ClassVisits visits) 
         {
-            SqlCommand command = new SqlCommand("editVisits", cnn);
+            SqlCommand command = new SqlCommand("editVisit", cnn);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@idVisit", SqlDbType.Int).Value = visits.idVisit;
             command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = visits.idDog;

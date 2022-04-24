@@ -57,7 +57,6 @@ namespace HotelDlaPsow
                 WindowDailyActiveAdd activeAdd = new WindowDailyActiveAdd(dailyActive);
                 activeAdd.DataContext = dailyActive;
                 activeAdd.ShowDialog();
-                MessageBox.Show(dailyActive.hourActivity+" ");
                 _base.collectionofActivities.Add(dailyActive);
                 _base.AddDailyInfoDate(dailyActive);
                 dataGridActivity.Items.Refresh();
@@ -65,12 +64,35 @@ namespace HotelDlaPsow
 
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            if (dataGridActivity.SelectedItem != null)
+            {
+                ClassDailyActive dailyActive = new ClassDailyActive((ClassDailyActive)dataGridActivity.SelectedItem);
+                WindowDailyActiveAdd activeAdd = new WindowDailyActiveAdd(dailyActive);
+                activeAdd.DataContext = dailyActive;
+                activeAdd.ShowDialog();
+                if (activeAdd.IsOkPressed)
+                {
+                    int index = _base.collectionofActivities.IndexOf((ClassDailyActive)dataGridActivity.SelectedItem);
+                    _base.collectionofActivities[index] = dailyActive;
+                    _base.EditDailyInfoDate(dailyActive);
+                    dataGridActivity.Items.Refresh();
+                }
+            }
+            else
+                MessageBox.Show("Nie wybrano obiektu");
         }
 
         private void ButtonDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            if (dataGridActivity.SelectedItem != null)
+            {
+                _base.DeletleDailyInfoDate(((ClassDailyActive)dataGridActivity.SelectedItem).idActivity);
+                int index = _base.collectionofActivities.IndexOf((ClassDailyActive)dataGridActivity.SelectedItem);
+                _base.collectionofActivities.RemoveAt(index);
+            }
+            else
+                MessageBox.Show("Nie wybrano obiektu do usunięcia");
         }
+
     }
 }

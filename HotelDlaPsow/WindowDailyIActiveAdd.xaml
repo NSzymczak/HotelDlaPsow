@@ -60,7 +60,7 @@
             <ComboBoxItem>23:00</ComboBoxItem>
         </ComboBox>
         <TextBox Text="{Binding activityDescription}" HorizontalContentAlignment="Center" Grid.RowSpan="2" VerticalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Margin="7" Grid.ColumnSpan="2"></TextBox>
-        <Button x:Name="buttonAdd" Grid.Column="2" Grid.Row="7" FontSize="16" Margin="10,10,10,0" Click="btnAdd_Click" Height="28" VerticalAlignment="Top" >Dodaj</Button>
+        <Button x:Name="buttonAdd" Grid.Column="3" Grid.Row="7" FontSize="16" Margin="10,10,10,10" Click="btnAdd_Click" >Dodaj</Button>
         <Button x:Name="buttonCancel" Grid.Column="4" Grid.Row="7" FontSize="16" Margin="10" Click="Button_Click"  >Anuluj</Button>
     </Grid>
 </Window>

@@ -41,6 +41,36 @@ namespace HotelDlaPsow
             dataGridVisits.Items.Clear();
             _base.GetVisits();
         }
+
+        private void buttonEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGridVisits.SelectedItem != null)
+            {
+                ClassVisits visits = new ClassVisits();
+                visits.beginDate = DateTime.Now;
+                visits.endDate = DateTime.Now;
+                WindowVisitsAdd visitsAdd = new WindowVisitsAdd(visits);
+                visitsAdd.DataContext = visits;
+                visitsAdd.ShowDialog();
+                if (visitsAdd.IsOkPressed)
+                {
+                    int index = _base.collectionofVisits.IndexOf((ClassVisits)dataGridVisits.SelectedItem);
+                    _base.collectionofVisits[index] = visits;
+                    _base.EditVisit(visits);
+                    dataGridVisits.Items.Refresh();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano obiektu");
+            }
+
+        }
+
+        private void buttonDeletele_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
     
 }

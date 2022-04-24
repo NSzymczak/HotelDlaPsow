@@ -302,13 +302,13 @@ namespace HotelDlaPsow
 
         public void EditVisit(ClassVisits visits) 
         {
-            SqlCommand command = new SqlCommand("editDateDog", cnn);
+            SqlCommand command = new SqlCommand("editVisits", cnn);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = visits.idVisit;
+            command.Parameters.AddWithValue("@idVisit", SqlDbType.Int).Value = visits.idVisit;
             command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = visits.idDog;
-            command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = visits.status;
-            command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = visits.beginDate;
-            command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = visits.endDate;
+            command.Parameters.AddWithValue("@status", SqlDbType.NVarChar).Value = visits.status;
+            command.Parameters.AddWithValue("@beginDate", SqlDbType.Int).Value = visits.beginDate;
+            command.Parameters.AddWithValue("@endDate", SqlDbType.Date).Value = visits.endDate;
             SqlDataAdapter da = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             da.Fill(dt);

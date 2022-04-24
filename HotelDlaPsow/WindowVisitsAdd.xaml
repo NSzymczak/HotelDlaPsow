@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HotelDlaPsow"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="WindowVisitsAdd" Height="450" Width="800">
+        Title="Dodawanie/Edytowanie Wizyty" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>

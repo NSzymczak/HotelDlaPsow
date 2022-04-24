@@ -19,7 +19,7 @@ namespace HotelDlaPsow
             string connetionString;
             try
             {
-                connetionString = @"Data Source=DESKTOP-NGM307V;Initial Catalog=Hotel;Integrated Security=True;";
+                connetionString = @"Data Source=KAMIL;Initial Catalog=Hotel;Integrated Security=True;";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
             }
@@ -220,14 +220,16 @@ namespace HotelDlaPsow
         public void AddDailyInfoDate(ClassDailyActive classDailyActive)       //Dodaj aktywność pieska      
         {
             OpenConection();
-            SqlCommand command = new SqlCommand("addDailyActive", cnn);
+            SqlCommand command = new SqlCommand("addDailyInfoDate", cnn);
             command.CommandType = CommandType.StoredProcedure;
             GetID();
+            id++;
             command.Parameters.AddWithValue("@idActivity", SqlDbType.Int).Value = id;
             command.Parameters.AddWithValue("@idDog", SqlDbType.Int).Value = classDailyActive.idDog;
             command.Parameters.AddWithValue("@hourActivity", SqlDbType.Time).Value = classDailyActive.hourActivity;
             command.Parameters.AddWithValue("@dateActivity", SqlDbType.Date).Value = classDailyActive.dateActivity;
             command.Parameters.AddWithValue("@activityDescription", SqlDbType.NVarChar).Value = classDailyActive.activityDescription;
+            MessageBox.Show("ok"+classDailyActive.hourActivity);
             SqlDataAdapter da = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             da.Fill(dt);

@@ -49,23 +49,18 @@ namespace HotelDlaPsow
         }
 
         private void ButtonAdd_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                ClassDailyActive dailyActive = new ClassDailyActive();
+        {  ClassDailyActive dailyActive = new ClassDailyActive();
                 dailyActive.idDog=Convert.ToInt32(TextboxName.Text);
                 dailyActive.dogName = LabelName.Content.ToString();
                 dailyActive.dateActivity = (DateTime)DatePickerDate.SelectedDate;
 
                 WindowDailyActiveAdd activeAdd = new WindowDailyActiveAdd(dailyActive);
                 activeAdd.DataContext = dailyActive;
-                activeAdd.ShowDialog ();
+                activeAdd.ShowDialog();
+                MessageBox.Show(dailyActive.hourActivity+" ");
                 _base.collectionofActivities.Add(dailyActive);
                 _base.AddDailyInfoDate(dailyActive);
                 dataGridActivity.Items.Refresh();
-            }
-            catch { }
-
         }
 
         private void ButtonEdit_Click(object sender, RoutedEventArgs e)
